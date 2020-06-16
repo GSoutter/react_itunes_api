@@ -8,7 +8,7 @@ class SongsContainer extends Component {
       songs: [],
       selectedSong: null
     }
-
+    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount(){
@@ -18,9 +18,14 @@ class SongsContainer extends Component {
     .then(jsonRes => this.setState({songs: jsonRes.feed.entry}))
   }
 
+  handleChange(songIndex){
+    const songSelected = this.state.songs[songIndex]
+    this.setState({selectedSong: songSelected})
+  }
+
   render() {
     return (
-      <SongSelector songs ={this.state.songs}/>
+      <SongSelector songs ={this.state.songs} onSelect={this.handleChange}/>
 
     )
   }
