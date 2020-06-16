@@ -5,18 +5,20 @@ const SongSelector = (props) => {
     return null
   }
   const songOption = props.songs.map((song, index) => {
-    return <option value={index} key={index} >{index+1}: {song.title.label}</option>
+    return <div className="grid-card">
+    <img src={song['im:image'][2].label} alt={song.name}/>
+    <button value={index} key={index} onClick={handleChange}>{index+1}: {song.title.label}</button>
+    </div>
   })
 
   function handleChange(ev) {
-    props.onSelect(ev.target.value);
+    props.onClick(ev.target.value);
   }
 
   return (
-    <select id="grid-selector" defaultValue="default" onChange={handleChange}>
-      <option disabled value="default">Choose a Song...</option>
+    <div className="grid-wrapper">
       {songOption}
-    </select>
+    </div>
   )
 }
 

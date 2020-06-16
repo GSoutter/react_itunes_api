@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import SongSelector from '../components/SongSelector.js'
 import SongDetail from '../components/SongDetail.js'
 
@@ -28,11 +28,12 @@ class SongsContainer extends Component {
 
   render() {
     return (
-      <div>
-      <h2>Songs Container</h2>
-      <SongSelector songs ={this.state.songs} onSelect={this.handleChange}/>
+      <section id = "app">
+      <header className="header">Itunes Top 20</header>
       <SongDetail song={this.state.selectedSong} />
-      </div>
+      <SongSelector songs ={this.state.songs} onClick={this.handleChange}/>
+
+      </section>
 
     )
   }
