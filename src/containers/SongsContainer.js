@@ -22,6 +22,7 @@ class SongsContainer extends Component {
 
   handleChange(songIndex){
     const songSelected = this.state.songs[songIndex]
+    songSelected.index = parseInt(songIndex) +1
     this.setState({selectedSong: songSelected})
   }
 

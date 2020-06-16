@@ -5,7 +5,7 @@ const SongSelector = (props) => {
     return null
   }
   const songOption = props.songs.map((song, index) => {
-    return <option value={index} key={index} >{song.title.label}</option>
+    return <option value={index} key={index} >{index+1}: {song.title.label}</option>
   })
 
   function handleChange(ev) {
