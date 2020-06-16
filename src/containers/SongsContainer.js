@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import SongSelector from '../components/SongSelector.js'
+import SongDetail from '../components/SongDetail.js'
 
 class SongsContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      songs: [],
+      songs: null,
       selectedSong: null
     }
     this.handleChange = this.handleChange.bind(this)
@@ -16,6 +17,7 @@ class SongsContainer extends Component {
     fetch(url)
     .then(res => res.json())
     .then(jsonRes => this.setState({songs: jsonRes.feed.entry}))
+    .catch(err => console.error)
   }
 
   handleChange(songIndex){
@@ -25,7 +27,11 @@ class SongsContainer extends Component {
 
   render() {
     return (
+      <div>
+      <h2>Songs Container</h2>
       <SongSelector songs ={this.state.songs} onSelect={this.handleChange}/>
+      <SongDetail song={this.state.selectedSong} />
+      </div>
 
     )
   }
