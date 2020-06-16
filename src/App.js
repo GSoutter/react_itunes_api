@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
+import SongsContainer from './containers/SongsContainer.js'
 
 function App() {
   return (
-    <h1>Hello</h1>
+    <SongsContainer/>
   );
 }
 
