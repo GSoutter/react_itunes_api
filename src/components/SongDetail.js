@@ -17,7 +17,21 @@ const SongDetail = ({song}) => {
         <p><span className="song-key">Artist: </span>{song['im:artist'].label}</p>
         <p><span className="song-key">Price: </span>{song['im:price'].label}</p>
         <p><span className="song-key">Release Date: </span>{song['im:releaseDate'].attributes.label}</p>
+        <p><span className="song-key">Preview: </span>
+
+
+            </p>
         <p><a href={song.link[0].attributes.href}>See in itunes</a></p>
+
+        <audio className="audio-player"
+             controls
+             src={song.link[1].attributes.href}>
+                 Your browser does not support the
+                 <code>audio</code> element.
+
+              <source src={song.link[1].attributes.href} type={song.link[1].attributes.type}/>
+         </audio>
+
       </div>
     </div>
   )
