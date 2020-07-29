@@ -29,7 +29,7 @@ class SongsContainer extends Component {
   render() {
     return (
       <section id = "app">
-      <header className="header">Itunes Top 20</header>
+      <header className="header">iTunes Top 20</header>
       <SongDetail song={this.state.selectedSong} />
       <SongSelector songs ={this.state.songs} onClick={this.handleChange}/>
 

@@ -17,6 +17,7 @@ const SongDetail = ({song}) => {
         <p><span className="song-key">Artist: </span>{song['im:artist'].label}</p>
         <p><span className="song-key">Price: </span>{song['im:price'].label}</p>
         <p><span className="song-key">Release Date: </span>{song['im:releaseDate'].attributes.label}</p>
+        {/* <p><span className="song-key">Release Date: </span>{song['im:collection']['im:name'].label}</p> */}
         <p><span className="song-key">Preview: </span>
 
 
