@@ -35,8 +35,8 @@ p {
   /* justify-content: space-between; */
   align-items: center;
   background-color: rgb(25, 20, 20);
-  font-size: 24px;
-  padding-left: 24px;
+  font-size: 36px;
+  padding-left: 1em;
 
 }
 
@@ -98,6 +98,8 @@ img {
    grid-gap: 1em; */
 
    /* border-style: solid; */
+   margin-left: 1em;
+   margin-right: 1em;
    border-radius: 4px;
    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
    background-color: #2B2A34;
